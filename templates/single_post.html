@@ -1,0 +1,14 @@
+<h2>{{ p.ttl }}</h2>
+<p>{{ p.body }}</p>
+
+<h3>Comments:</h3>
+{% for c in p.comments %}
+  <b>{{ c.n }}</b>: {{ c.content }}<br>
+{% endfor %}
+
+<h4>Add Comment</h4>
+<form method="post" action="/comment/{{ p.id }}">
+  <input name="name" placeholder="Your name">
+  <textarea name="cont" placeholder="Comment"></textarea>
+  <button type="submit">Send</button>
+</form>

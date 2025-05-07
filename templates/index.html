@@ -1,0 +1,6 @@
+<h1>Posts</h1>
+{% for p in posts %}
+  <h3><a href="/post/{{ p.id }}">{{ p.ttl }}</a></h3>
+  <p>{{ p.body[:100] }}...</p>
+{% endfor %}
+<a href="/make">Create</a>
