@@ -41,7 +41,7 @@ def signup():
     )
     db.session.add(new_us)
     db.session.commit()
-    
+    # return render_template('signup.html')
     return jsonify({'message': 'created user '}), 201
 
 @auth_bp.route('/api/login', methods=['POST'])
@@ -58,4 +58,5 @@ def login():
         }, os.getenv('SECRET_KEY'))
         
         return jsonify({'token': token})
+    # return render_template('login.html')
     return jsonify({'message': 'password invalid'}), 401

@@ -12,6 +12,7 @@ def get_posts():
     for po in posts:
         ps = po.to_dict()
         op.append(ps)
+    # return render_template('create_post.html')
     return jsonify(op), 200
 
 @blog_bp.route('/api/posts/<int:post_id>', methods=['GET'])
@@ -23,6 +24,7 @@ def get_post(post_id):
         cs.append(ct.to_dict())
     ps_dt['comments'] = cs
     
+    # return render_template('single_post.html', post=post)
     return jsonify(ps_dt), 200
 
 @blog_bp.route('/api/posts', methods=['POST'])
