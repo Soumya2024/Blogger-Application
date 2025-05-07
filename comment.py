@@ -8,7 +8,7 @@ comment_bp = Blueprint('comment', __name__)
 def get_comments(post_id):
     post = Post.query.get_or_404(post_id)
     cd = []
-    for comment in post.cd:
+    for comment in post.comments:
         cd.append(comment.to_dict())
     
     return jsonify(cd)
